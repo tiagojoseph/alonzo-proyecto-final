@@ -5,5 +5,19 @@
 {% block header %}  buscar casa {% endblock header%}
 
 {% block main %}
-<p> casas </p>
+
+<form action= {% url "inicio:buscar_casa" %}>
+    {{form}}
+    <input type="submit">
+
+{% if casas %}
+<ul>
+    {% for casa in casas %}
+    <li> {{casa}} </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>no hay casas registradas</p>
+{% endif %}
+
 {% endblock main %}

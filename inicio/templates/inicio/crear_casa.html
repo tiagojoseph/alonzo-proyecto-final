@@ -5,5 +5,15 @@
 {% block header %} Crear casa {% endblock header%}
 
 {% block main %}
-<p> listado </p>
+
+<form action= {% url "inicio:crear_casa" %} method= "POST" >
+    {% csrf_token %}
+
+
+    {{form}}
+    
+    <button> enviar </button>
+</form>
+
 {% endblock main %}
+
