@@ -1,0 +1,18 @@
+{% extends "inicio/index.html" %}
+
+{% block title_head %} editar casa {% endblock title_head %}
+
+{% block header %} editar {{casa}} {% endblock header%}
+
+{% block main %}
+
+<form action= {% url "inicio:editar_casa" casa.id  %} method= "POST" >
+    {% csrf_token %}
+
+
+    {{form}}
+    
+    <button> editar </button>
+</form>
+
+{% endblock main %}

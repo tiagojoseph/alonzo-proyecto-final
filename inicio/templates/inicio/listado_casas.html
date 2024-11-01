@@ -1,0 +1,28 @@
+{% extends "inicio/index.html" %}
+{% block title_head %}
+Crear casa nueva
+{% endblock title_head %}
+{% block h1_header %}Crear casa nueva{% endblock h1_header %}
+{% block main %}
+
+<a class= "navbar-brand" href={% url "inicio:crear_casa_nueva" %}> nueva casa</a>
+
+{% if casas %}
+<ul>
+    {%for casa in casas %}
+    <li> {{casa}}
+        <a href= {% url "inicio:ver_casa" casa.id %}>Ver casa</a>
+        <a href= {% url "inicio:eliminar_casa" casa.id %}>eliminar</a>
+        <a href= {% url "inicio:editar_casa" casa.id %}>editar</a>
+       
+    
+        
+        
+    </li>
+    {%endfor%}
+</ul>
+{%else%}
+<p>no hay casas registradas</p>
+{%endif%}
+
+{% endblock main %}

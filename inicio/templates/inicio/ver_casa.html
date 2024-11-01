@@ -1,0 +1,21 @@
+{% extends "inicio/index.html" %}
+
+{% block title_head %} Ver casa {% endblock title_head %}
+
+{% block header %} Casa {{casa.id}} {% endblock header%}
+
+{% block main %}
+
+<ul>
+    <li>
+        Ubicacion: {{casa.ubicacion}}
+    </li>
+    <li>
+        Ambientes: {{casa.ambientes}}
+    </li>
+    <li>
+        Precio: {{casa.precio}}
+    </li>
+</ul>
+
+{% endblock main %}

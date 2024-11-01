@@ -1,0 +1,15 @@
+{% extends "inicio/index.html" %}
+{% block title_head %}
+Crear casa nueva
+{% endblock title_head %}
+{% block h1_header %}Crear casa nueva{% endblock h1_header %}
+{% block main %}
+
+<form action= {% url "inicio:crear_casa_nueva" %} method= "post">
+    {% csrf_token %}
+    {{form}}
+
+    <input type="submit" value= "crear">
+</form>
+
+{% endblock main %}
